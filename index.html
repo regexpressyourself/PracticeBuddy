@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Modes of Music</title>
+
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <style type="text/css" media="screen">
+#mode-list{
+    font-size: 30px;
+    font-family: Monospace;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>The Many Modes of Music</h1>
+                </div>
+            </div>
+            <div id="mode-list" class="row">
+                <div class="col-xs-12">
+                    <table class="table" id="mode-table">
+                    </table>
+                </div>
+            </div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+            <script src="public/js/bootstrap.min.js"></script>
+
+        <script charset="utf-8">
+let mode_object = {
+"Lydian":     ["1", "2",  "3",  "4+", "5",  "6",  "7"],
+"Ionian":     ["1", "2",  "3",  "4",  "5",  "6",  "7"],
+"Dorian":     ["1", "2",  "3-", "4",  "5",  "6",  "7-"],
+"Mixolydian": ["1", "2",  "3",  "4",  "5",  "6",  "7-"],
+"Aeolian":    ["1", "2",  "3-", "4",  "5",  "6-", "7-"],
+"Phrygian":   ["1", "2-", "3-", "4",  "5",  "6-", "7-"],
+"Locrian":    ["1", "2-", "3-", "4",  "5-", "6-", "7-"]
+}
+
+let mode_html = "";
+for (let mode in mode_object) {
+mode_html += "<tr><td>" + mode + "</td>";
+let notes = ""
+mode_object[mode].forEach((mode_note) => {
+notes += "<td>"+mode_note+"</td>";
+});
+mode_html += notes
+}
+console.log(mode_html);
+document.getElementById("mode-table").innerHTML  = mode_html;
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
