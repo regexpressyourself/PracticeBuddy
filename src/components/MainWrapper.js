@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
 import app_data from '../config/data.js';
+import Nav from './Nav';
+import ModeArea from './ModeArea';
 
 class MainWrapper extends Component {
     constructor(props) {
@@ -14,8 +16,9 @@ class MainWrapper extends Component {
 
     render() {
         return (
-            <div>
-                {JSON.stringify(this.state.modes)}
+            <div id="main-container">
+                <Nav />
+                <ModeArea mode_data={this.state} />
             </div>
         );
     }

@@ -1,5 +1,54 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#mode-container {
+    height: 100%;
+    display:grid;
+    grid-template-columns:  1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr 1fr 2fr 2fr;
+    grid-auto-rows: auto;
+    text-align:center;
+    grid-template-areas: "nav      nav       nav"
+                         "header   header    header"
+                         "blurb    blurb     blurb"
+                         "interval interval  interval"
+                         "note     note      note"
+                         "left-btn mode-btn  right-btn"
+                         "left-btn pitch-btn right-btn";
+ }
+.nav {
+    grid-area: nav;
+    /*position: fixed;*/
+    background-color: grey;
+}
+.header {
+    grid-area: header;
+}
+.blurb {
+    grid-area: blurb;
+}
+.interval {
+    grid-area: interval;
+}
+.note {
+    grid-area: note;
+}
+.left-btn {
+    grid-area: left-btn;
+    background-color: blue;
+}
+.mode-btn {
+    grid-area: mode-btn;
+    background-color: green;
+}
+.right-btn{
+    grid-area: right-btn;
+    background-color: orange;
+}
+.pitch-btn {
+    grid-area: pitch-btn;
+    background-color: red;
 }

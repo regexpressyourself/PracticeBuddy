@@ -1,5 +1,5 @@
 let data = {
-    "mode_to_chromatic": {
+    mode_to_chromatic: {
         "1": 0  , "1-": 11 , "1+": 1  ,
         "2": 2  , "2-": 1  , "2+": 3  ,
         "3": 4  , "3-": 3  , "3+": 5  ,
@@ -9,36 +9,43 @@ let data = {
         "7": 11 , "7-": 10 , "7+": 12 ,
         "8": 12 , "8-": 11 , "8+": 13
     },
-    "sharp_based_chromatic": ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", " B",  "C"],
-    "flat_based_chromatic":  ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", " B",  "C"],
+    sharp_based_chromatic: ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", " B",  "C"],
+    flat_based_chromatic:  ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", " B",  "C"],
     modes: [
         {
-            name: "Lydian",
-            notes: ["1", "2",  "3",  "4+", "5",  "6",  "7"]
-        },
-        {
             name: "Ionian",
-            notes: ["1", "2",  "3",  "4",  "5",  "6",  "7"]
+            notes: ["1", "2",  "3",  "4",  "5",  "6",  "7"],
+            blurb: "Happy, carefree"
         },
         {
             name: "Dorian",
-            notes: ["1", "2",  "3-", "4",  "5",  "6",  "7-"]
-        },
-        {
-            name: "Mixolydian",
-            notes: ["1", "2",  "3",  "4",  "5",  "6",  "7-"]
-        },
-        {
-            name: "Aeolian",
-            notes: ["1", "2",  "3-", "4",  "5",  "6-", "7-"]
+            notes: ["1", "2",  "3-", "4",  "5",  "6",  "7-"],
+            blurb: "Hip, jazzy"
         },
         {
             name: "Phrygian",
-            notes: ["1", "2-", "3-", "4",  "5",  "6-", "7-"]
+            notes: ["1", "2-", "3-", "4",  "5",  "6-", "7-"],
+            blurb: "Exotic, Middle Eastern"
+        },
+        {
+            name: "Lydian",
+            notes: ["1", "2",  "3",  "4+", "5",  "6",  "7"],
+            blurb: "Ethereal and dreamy"
+        },
+        {
+            name: "Mixolydian",
+            notes: ["1", "2",  "3",  "4",  "5",  "6",  "7-"],
+            blurb: "Bluesy, rock and roll"
+        },
+        {
+            name: "Aeolian",
+            notes: ["1", "2",  "3-", "4",  "5",  "6-", "7-"],
+            blurb: "Sentimental, tragic"
         },
         {
             name: "Locrian",
-            notes: ["1", "2-", "3-", "4",  "5-", "6-", "7-"]
+            notes: ["1", "2-", "3-", "4",  "5-", "6-", "7-"],
+            blurb: "Dark and unstable"
         }
     ]
 }
