@@ -52,32 +52,36 @@ class ModeArea extends Component {
     render() {
         return (
             <div id="mode-container">
-            <div className="header">
-            {this.state.header_array[this.state.note_offset]}
-            </div>
-            <div className="blurb">
-            {this.state.blurb_array[this.state.note_offset]}
-            </div>
-            <div className="interval">
-            {this.state.interval_array[this.state.note_offset]}
-            </div>
-            <div className="note">
-            {this.state.notes_array[this.state.note_offset]}
-            </div>
-            <div className="left-btn">
-            <button>
-            left-btn
-            </button>
-            </div>
-            <div className="mode-btn">
-            mode-btn
-            </div>
-            <div className="right-btn">
-            right-btn
-            </div>
-            <div className="pitch-btn">
-            pitch-btn
-            </div>
+                <Nav />
+                <div className="center-grid-area header">
+                    <div>
+
+                        {this.state.header_array[this.state.note_offset]}
+                        {this.state.blurb_array[this.state.note_offset]}
+                    </div>
+                </div>
+                <NoteSection notes={this.state.notes_array[this.state.note_offset]} 
+                    intervals={this.state.interval_array[this.state.note_offset]}/>
+                <div className="center-grid-area left-btn">
+                    <i className="fa fa-chevron-left"></i>
+                </div>
+                <div className="center-grid-area mode-btn">
+                    <i className="fa fa-list"></i>
+                    <span className="btn-text">
+                        Choose Mode 
+                    </span>
+
+                </div>
+                <div className="center-grid-area right-btn">
+                    <i className="fa fa-chevron-right"></i>
+                </div>
+                <div className="center-grid-area pitch-btn">
+
+                        <i className="fa fa-music" aria-hidden="true"></i>
+                        <span className="btn-text">
+                        Starting Pitch 
+                        </span>
+                </div>
             </div>
         );
     }
