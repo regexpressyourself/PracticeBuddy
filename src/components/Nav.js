@@ -8,8 +8,8 @@ class Nav extends Component {
 
     render() {
         return (
-            <div className="nav">
-                
+            <div className="center-grid-area nav">
+                <p id="nav-title">Practice Buddy</p>
             </div>
         );
     }
