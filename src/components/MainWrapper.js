@@ -17,7 +17,6 @@ class MainWrapper extends Component {
     render() {
         return (
             <div id="main-container">
-                <Nav />
                 <ModeArea mode_data={this.state} />
             </div>
         );
