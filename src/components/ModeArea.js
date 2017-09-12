@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
+import NoteSection from './NoteSection';
+import Nav from './Nav';
 
 class ModeArea extends Component {
     constructor(props) {
@@ -25,22 +27,19 @@ class ModeArea extends Component {
         let i              = 0;
         for (let mode of this.state.data.modes) {
             header_array.push(
-                <h1 key={i++}>{mode.name}</h1>
+                <h1 id="mode-title" key={i++}>{mode.name}</h1>
             );
             interval_array.push(
-                <p key={i++}>{mode.notes}</p>
+                mode.notes
             );
             blurb_array.push(
-                <p key={i++}>{mode.blurb}</p>
+                <p id="mode-blurb" key={i++}>{mode.blurb}</p>
             );
             notes_array.push(mode.notes.map((interval) => {
-                console.log(interval);
                 return this.state.data.sharp_based_chromatic[this.state.data.mode_to_chromatic[interval]];
             }));
         }
 
-        console.log("notes");
-        console.log(notes_array);
         
         this.setState({
             header_array: header_array,
