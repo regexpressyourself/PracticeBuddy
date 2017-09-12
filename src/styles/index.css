@@ -1,54 +1,94 @@
+:root {
+  --bg-color:        #f3efd7;
+  --nav-color:       #ffe66d;
+  --nav-light-color: #ffefa2;
+  --dark-color:      #292f36;
+  --dark-color:      #292f36;
+  --blue-color:      #4edcd4;
+  --red-color:       #ff6b6b;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Dosis, sans-serif;
+    font-size: 200%;
 }
 
+i {
+    font-style: normal;
+}
+
+#mode-title {
+    margin-bottom: 5px;
+}
+
+#nav-title {
+    font-size: 75%;
+}
+#mode-blurb{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 #mode-container {
-    height: 100%;
+    background-color: var(--bg-color);
+    height: 100vh;
     display:grid;
     grid-template-columns:  1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr 1fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 3fr 1fr 1fr;
     grid-auto-rows: auto;
     text-align:center;
     grid-template-areas: "nav      nav       nav"
                          "header   header    header"
-                         "blurb    blurb     blurb"
-                         "interval interval  interval"
-                         "note     note      note"
+                         "note-section note-section note-section"
                          "left-btn mode-btn  right-btn"
                          "left-btn pitch-btn right-btn";
  }
 .nav {
     grid-area: nav;
     /*position: fixed;*/
-    background-color: grey;
+    background-color: var(--nav-color);
+    max-height: 70px;
 }
 .header {
     grid-area: header;
 }
-.blurb {
-    grid-area: blurb;
+.note-section{
+    grid-area: note-section;
 }
-.interval {
-    grid-area: interval;
-}
-.note {
-    grid-area: note;
+.center-grid-area {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .left-btn {
     grid-area: left-btn;
-    background-color: blue;
+    background-color: var(--nav-color);
 }
 .mode-btn {
     grid-area: mode-btn;
-    background-color: green;
+    background-color: var(--red-color);
+    display:grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 1fr;
 }
 .right-btn{
     grid-area: right-btn;
-    background-color: orange;
+    background-color: var(--nav-color);
 }
 .pitch-btn {
     grid-area: pitch-btn;
-    background-color: red;
+    background-color: var(--blue-color);
+    display:grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.btn-text {
+    padding:0;
+    margin:0;
+    font-size: 75%;
+}
+.fa {
+    font-size: 150%;
 }
