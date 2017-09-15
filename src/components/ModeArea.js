@@ -2,6 +2,11 @@ import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import NoteSection from './NoteSection';
 import Nav from './Nav';
+import chevronLeft from '../statics/feather/chevron-left.svg';
+import chevronRight from '../statics/feather/chevron-right.svg';
+import music from '../statics/feather/music.svg';
+import list from '../statics/feather/list.svg';
+
 
 class ModeArea extends Component {
     constructor(props) {
@@ -12,7 +17,7 @@ class ModeArea extends Component {
             header_array   : [],
             interval_array : [],
             blurb_array    : []
-        }
+        };
     }
     componentWillMount() {
         this.setState({
@@ -85,21 +90,22 @@ class ModeArea extends Component {
                 { /* Buttons */ }
 
                 <div onClick={this.decrementMode} className="center-grid-area left-btn">
-                    <i className="fa fa-chevron-left"></i>
+
+                    <img className="fa" src={chevronLeft} alt="" />
                 </div>
                 <div onClick={this.changeMode} className="center-grid-area mode-btn">
-                    <i className="fa fa-list"></i>
+                    <img className="fa" src={list} alt="" />
                     <span className="btn-text">
                         Choose Mode 
                     </span>
 
                 </div>
                 <div onClick={this.incrementMode} className="center-grid-area right-btn">
-                    <i className="fa fa-chevron-right"></i>
+                    <img className="fa" src={chevronRight} alt="" />
                 </div>
                 <div onClick={this.changePitch} className="center-grid-area pitch-btn">
 
-                        <i className="fa fa-music" aria-hidden="true"></i>
+                    <img className="fa" src={music} alt="" />
                         <span className="btn-text">
                         Starting Pitch 
                         </span>
