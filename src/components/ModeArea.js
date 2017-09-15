@@ -48,34 +48,56 @@ class ModeArea extends Component {
             blurb_array: blurb_array
         });
     }
+    incrementMode() {
+        console.log("increment mode");
+    }
+
+    decrementMode() {
+        console.log("decrement mode");
+    }
+
+    changeMode() {
+        console.log("change mode");
+    }
+    changePitch() {
+        console.log("change pitch");
+    }
 
     render() {
         return (
             <div id="mode-container">
                 <Nav />
+
+                {/* Mode and Blurb */}
+
                 <div className="center-grid-area header">
                     <div>
-
                         {this.state.header_array[this.state.note_offset]}
                         {this.state.blurb_array[this.state.note_offset]}
                     </div>
                 </div>
+
+                { /* Notes */ }
+
                 <NoteSection notes={this.state.notes_array[this.state.note_offset]} 
                     intervals={this.state.interval_array[this.state.note_offset]}/>
-                <div className="center-grid-area left-btn">
+
+                { /* Buttons */ }
+
+                <div onClick={this.decrementMode} className="center-grid-area left-btn">
                     <i className="fa fa-chevron-left"></i>
                 </div>
-                <div className="center-grid-area mode-btn">
+                <div onClick={this.changeMode} className="center-grid-area mode-btn">
                     <i className="fa fa-list"></i>
                     <span className="btn-text">
                         Choose Mode 
                     </span>
 
                 </div>
-                <div className="center-grid-area right-btn">
+                <div onClick={this.incrementMode} className="center-grid-area right-btn">
                     <i className="fa fa-chevron-right"></i>
                 </div>
-                <div className="center-grid-area pitch-btn">
+                <div onClick={this.changePitch} className="center-grid-area pitch-btn">
 
                         <i className="fa fa-music" aria-hidden="true"></i>
                         <span className="btn-text">

@@ -23,9 +23,6 @@ i {
     margin-bottom: 5px;
 }
 
-#nav-title {
-    font-size: 75%;
-}
 #mode-blurb{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -48,7 +45,7 @@ i {
     grid-area: nav;
     /*position: fixed;*/
     background-color: var(--nav-color);
-    max-height: 70px;
+    height: 70px;
 }
 .header {
     grid-area: header;
@@ -72,10 +69,17 @@ i {
     display:grid;
     grid-template-columns:  1fr;
     grid-template-rows: 1fr 1fr;
+    padding-top: 5px;
 }
 .right-btn{
     grid-area: right-btn;
     background-color: var(--nav-color);
+}
+.right-btn:hover, 
+.left-btn:hover,
+.mode-btn:hover,
+.pitch-btn:hover {
+    cursor: pointer;
 }
 .pitch-btn {
     grid-area: pitch-btn;
@@ -83,6 +87,7 @@ i {
     display:grid;
     grid-template-columns:  1fr;
     grid-template-rows: 1fr 1fr;
+    padding-top: 5px;
 }
 .btn-text {
     padding:0;
