@@ -1,0 +1,114 @@
+:root {
+  --bg-color:        #f3efd7;
+  --nav-color:       #ffe66d;
+  --nav-light-color: #ffefa2;
+  --dark-color:      #292f36;
+  --dark-color:      #292f36;
+  --blue-color:      #4edcd4;
+  --red-color:       #ff6b6b;
+}
+#nav-menu-container {
+    border: .5px solid black;
+    height: 100vh;
+    background-color: var(--nav-color);
+    max-width: 80vw;
+    width: 260px;
+    z-index: 9999;
+    position:absolute;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    transition: 0.3s;
+}
+#nav-menu {
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+}
+#nav-menu > li {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 240px;
+    height: 70px;
+    font-size: 75%;
+    background-color: var(--nav-light-color);
+    padding: 10px 0 10px 20px;
+}
+
+#nav-menu > li:nth-child(even) {
+    background: var(--nav-color);
+}
+#nav-menu > li:hover {
+    background: var(--dark-color);
+    color: var(--bg-color);
+}
+
+#hamburger-spans {
+    transition: 0.3s;
+    position:absolute;
+    z-index: 10001;
+}
+#hamburger-spans > span {
+    transition: 0.3s;
+ display: block;
+  width: 40px;
+  height: 5.5px;
+  position: relative;
+  background: var(--dark-color);
+  border-radius: 10px;
+  z-index: 1;
+
+}
+#nav-title {
+    height:30px;
+    margin:20px;
+    padding:0;
+    font-size: 75%;
+}
+#collapsed-nav-title {
+    height:30px;
+    font-size: 90%;
+    font-weight: 400;
+    margin-left: -70px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.hidden-nav {
+    margin-left: -260px;
+}
+.shown-nav{
+    margin-left: 0px;
+}
+.hidden-nav-span {
+    left: 15px;
+    top: -10px;
+}
+.shown-nav-span {
+    left: 210px;
+    top: -5px;
+}
+
+.hidden-nav-span > .top-bun {
+    transform: rotate(0deg);
+    margin-bottom: 5px;
+}
+.shown-nav-span > .top-bun {
+    transform: rotate(45deg);
+    margin-bottom: -5px;
+}
+.shown-nav-span > .meat {
+    opacity: 0;
+}
+.hidden-nav-span > .meat {
+    opacity: 1;
+}
+.hidden-nav-span > .bottom-bun {
+    transform: rotate(0deg);
+    margin-top: 5px;
+}
+.shown-nav-span > .bottom-bun {
+    transform: rotate(-45deg);
+    margin-top: -5px;
+}
