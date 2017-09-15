@@ -1,5 +1,7 @@
-# Practice Buddy
-_a web app to help practice guitar and bass, written in React.js_
+
+<img alt="Practice Buddy" src="https://regexpressyourself.github.io/public/practicebuddy_logo.png" width="400px"/>
+
+_A web app to help practice guitar and bass, written in React.js_
 
 ## Components
 
