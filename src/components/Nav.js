@@ -10,12 +10,32 @@ class Nav extends Component {
             nav_element_class: "hidden-nav"
         };
         this.toggleNav = this.toggleNav.bind(this);
+        this.setWrapperRef = this.setWrapperRef.bind(this);           
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
     toggleNav() {
         this.setState({
             nav_element_class: (this.state.nav_element_class === "hidden-nav") ?  
             "shown-nav" : "hidden-nav"
         });
+    }    
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        this.setState({
+            nav_element_class:  "hidden-nav"
+        });
+
+        }
     }
     render() {
         return (
@@ -25,7 +45,9 @@ class Nav extends Component {
                     <span className="meat"></span>
                     <span className="bottom-bun"></span>
                 </p>
-                <div id="nav-menu-container" className={this.state.nav_element_class}>
+                <div ref={this.setWrapperRef} 
+                    id="nav-menu-container" 
+                    className={this.state.nav_element_class}>
                     <h2 id="collapsed-nav-title">Practice Buddy</h2>
                     <ul id="nav-menu">
                         <li># Modes</li>
@@ -34,7 +56,7 @@ class Nav extends Component {
                         <li># About</li>
                     </ul>
                 </div>
-                <p id="nav-title">Practice Buddy</p>
+                    <h2 className={this.state.nav_element_class+"-reg-title"} id="nav-title">Practice Buddy</h2>
             </div>
         );
     }
