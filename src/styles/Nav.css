@@ -8,7 +8,6 @@
   --red-color:       #ff6b6b;
 }
 #nav-menu-container {
-    border: .5px solid black;
     height: 100vh;
     background-color: var(--nav-color);
     max-width: 80vw;
@@ -23,6 +22,7 @@
 #nav-menu {
     list-style: none;
     padding: 0px;
+    margin-top: 70px;
     width: 100%;
 }
 #nav-menu > li {
@@ -30,6 +30,7 @@
     flex-flow: column wrap;
     align-items: flex-start;
     justify-content: center;
+    transition: 0.3s;
     width: 240px;
     height: 70px;
     font-size: 75%;
@@ -62,24 +63,36 @@
 
 }
 #nav-title {
-    height:30px;
-    margin:20px;
-    padding:0;
-    font-size: 75%;
-}
-#collapsed-nav-title {
-    height:30px;
+    transition: 0.4s;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height:70px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 90%;
     font-weight: 400;
-    margin-left: -70px;
-    margin-top: 5px;
-    margin-bottom: 0px;
+}
+#collapsed-nav-title {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    left: 7px;
+    height:70px;
+    margin: 0;
+    font-size: 90%;
+    font-weight: 400;
+    position: absolute;
 }
 .hidden-nav {
     margin-left: -260px;
 }
 .shown-nav{
     margin-left: 0px;
+}
+.shown-nav > h2{
 }
 .hidden-nav-span {
     left: 15px;
@@ -88,6 +101,12 @@
 .shown-nav-span {
     left: 210px;
     top: -5px;
+}
+.shown-nav-reg-title{
+    margin-left: -100vw;
+}
+.hidden-nav-reg-title{
+    margin-left: 00px;
 }
 
 .hidden-nav-span > .top-bun {
