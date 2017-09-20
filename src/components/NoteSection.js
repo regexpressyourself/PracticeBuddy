@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import styles from '../styles/NoteSection.css';
+import '../styles/NoteSection.css';
 
 class NoteSection extends Component {
     constructor(props) {

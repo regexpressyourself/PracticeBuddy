@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import PropTypes from 'prop-types';
 import NoteSection from './NoteSection';
 import Nav from './Nav';
 import chevronLeft from '../statics/feather/chevron-left.svg';

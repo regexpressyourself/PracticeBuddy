@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import app_data from '../config/data.js';
-import Nav from './Nav';
 import ModeArea from './ModeArea';
 
 class MainWrapper extends Component {
