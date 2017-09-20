@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
-import PropTypes from 'prop-types';
-import styles from '../styles/Nav.css';
+import '../styles/Nav.css';
 
 
 class Nav extends Component {
@@ -11,36 +10,51 @@ class Nav extends Component {
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.setWrapperRef = this.setWrapperRef.bind(this);           
+        this.setBurgerRef = this.setBurgerRef.bind(this);           
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
+
     toggleNav() {
-        this.setState({
-            nav_element_class: (this.state.nav_element_class === "hidden-nav") ?  
-            "shown-nav" : "hidden-nav"
-        });
+        if (this.state.nav_element_class === "hidden-nav") {
+            this.setState({
+                nav_element_class: "shown-nav"
+            });
+        }
+        else {
+            this.setState({
+                nav_element_class: "hidden-nav"
+            });
+        }
     }    
+
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
+        document.removeeventlistener('mousedown', this.handleClickOutside);
     }
     setWrapperRef(node) {
         this.wrapperRef = node;
     }
+    setBurgerRef(node) {
+        this.burgerRef  = node;
+    }
     handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-        this.setState({
-            nav_element_class:  "hidden-nav"
-        });
-
+        if (!(this.burgerRef && this.burgerRef.contains(event.target)) &&
+            this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.setState({
+                nav_element_class:  "hidden-nav"
+            });
         }
     }
     render() {
         return (
             <div className="nav">
-                <p id="hamburger-spans" onClick={this.toggleNav} className={this.state.nav_element_class+"-span"}>
+                <p ref={this.setBurgerRef} 
+                    onClick={this.toggleNav}
+                    id="hamburger-spans" 
+                    className={this.state.nav_element_class+"-span"}>
                     <span className="top-bun"></span>
                     <span className="meat"></span>
                     <span className="bottom-bun"></span>
@@ -55,6 +69,8 @@ class Nav extends Component {
                         <li># Charts</li>
                         <li># About</li>
                     </ul>
+                </div>
+                <div id={"nav-background-clicker-"+this.state.nav_element_class}>
                 </div>
                     <h2 className={this.state.nav_element_class+"-reg-title"} id="nav-title">Practice Buddy</h2>
             </div>
