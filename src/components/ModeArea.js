@@ -11,25 +11,26 @@ class ModeArea extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            note_offset: 0,
+            current_mode: 0,
+            current_offset: 0,
             notes_array    : [],
             header_array   : [],
             interval_array : [],
             blurb_array    : []
         };
+        this.incrementMode= this.incrementMode.bind(this);
+        this.decrementMode= this.decrementMode.bind(this);
+        this.changeMode= this.changeMode.bind(this);
+        this.changePitch= this.changePitch.bind(this);
     }
     componentWillMount() {
-        this.setState({
-            data: this.props.mode_data
-        }, this.get_header);
-    }
-    get_header() {
         let header_array   = [];
+        let notes_array   = [];
         let interval_array = [];
-        let notes_array    = [];
         let blurb_array    = [];
+        let mode_to_chromatic = this.props.mode_data.mode_to_chromatic;
         let i              = 0;
-        for (let mode of this.state.data.modes) {
+        for (let mode of this.props.mode_data.modes) {
             header_array.push(
                 <h1 id="mode-title" key={i++}>{mode.name}</h1>
             );
@@ -39,32 +40,40 @@ class ModeArea extends Component {
             blurb_array.push(
                 <p id="mode-blurb" key={i++}>{mode.blurb}</p>
             );
-            notes_array.push(mode.notes.map((interval) => {
-                return this.state.data.sharp_based_chromatic[this.state.data.mode_to_chromatic[interval]];
+            notes_array.push(mode.notes.map((note) => {
+                return mode_to_chromatic[note];
             }));
         }
-
-        
         this.setState({
             header_array: header_array,
-            notes_array: notes_array,
             interval_array: interval_array,
-            blurb_array: blurb_array
+            notes_array: notes_array,
+            blurb_array: blurb_array,
+            data: this.props.mode_data
         });
     }
+
     incrementMode() {
-        console.log("increment mode");
+        this.setState({
+            current_mode: (this.state.current_mode + 1) %7
+        });
     }
 
     decrementMode() {
-        console.log("decrement mode");
+        this.setState({
+            current_mode: (this.state.current_mode + 6) % 7
+        });
     }
 
     changeMode() {
-        console.log("change mode");
+        this.setState({
+            current_offset: (this.state.current_offset + 1)
+        }, () => {console.log(this.state.current_offset)});
     }
     changePitch() {
-        console.log("change pitch");
+        this.setState({
+            current_offset: (this.state.current_offset + 11) 
+        }, () => {console.log(this.state.current_offset)});
     }
 
     render() {
@@ -76,15 +85,20 @@ class ModeArea extends Component {
 
                 <div className="center-grid-area header">
                     <div>
-                        {this.state.header_array[this.state.note_offset]}
-                        {this.state.blurb_array[this.state.note_offset]}
+                        {this.state.header_array[this.state.current_mode]}
+                        {this.state.blurb_array[this.state.current_mode]}
                     </div>
                 </div>
 
                 { /* Notes */ }
 
-                <NoteSection notes={this.state.notes_array[this.state.note_offset]} 
-                    intervals={this.state.interval_array[this.state.note_offset]}/>
+                <NoteSection notes={this.state.notes_array[this.state.current_mode]} 
+                    intervals={this.state.interval_array[this.state.current_mode]}
+                    offset={this.state.current_offset}
+                    mode_to_chromatic={this.state.data.mode_to_chromatic}
+                    sharp_based_chromatic={this.state.data.sharp_based_chromatic}
+                    flat_based_chromatic={this.state.data.flat_based_chromatic}
+                />
 
                 { /* Buttons */ }
 
