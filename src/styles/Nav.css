@@ -32,7 +32,7 @@
     margin-top: 70px;
     width: 100%;
 }
-#nav-menu > li {
+#nav-menu > a {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
@@ -43,12 +43,15 @@
     font-size: 75%;
     background-color: var(--nav-light-color);
     padding: 10px 0 10px 20px;
+    cursor:pointer;
+    color: var(--dark-color);
+    text-decoration: none;
 }
 
-#nav-menu > li:nth-child(even) {
+#nav-menu > a:nth-child(even) {
     background: var(--nav-color);
 }
-#nav-menu > li:hover {
+#nav-menu > a:hover {
     background: var(--dark-color);
     color: var(--bg-color);
 }
@@ -94,6 +97,9 @@
     font-size: 90%;
     font-weight: 400;
     position: absolute;
+    cursor:pointer;
+    text-decoration: none;
+    color: var(--dark-color);
 }
 .hidden-nav {
     margin-left: -260px;

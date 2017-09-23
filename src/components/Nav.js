@@ -62,12 +62,12 @@ class Nav extends Component {
                 <div ref={this.setWrapperRef} 
                     id="nav-menu-container" 
                     className={this.state.nav_element_class}>
-                    <h2 id="collapsed-nav-title">Practice Buddy</h2>
+                    <a href='/' ><h2 id="collapsed-nav-title">Practice Buddy</h2></a>
                     <ul id="nav-menu">
-                        <li># Modes</li>
-                        <li># Chords</li>
-                        <li># Charts</li>
-                        <li># About</li>
+                        <a href="/modes"><li># Modes</li></a>
+                        <a href="/chords"><li># Chords</li></a>
+                        <a href="/charts"><li># Charts</li></a>
+                        <a href="about"><li># About</li></a>
                     </ul>
                 </div>
                 <div id={"nav-background-clicker-"+this.state.nav_element_class}>
