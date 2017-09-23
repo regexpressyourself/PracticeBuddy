@@ -15,6 +15,7 @@
     background-color: var(--nav-color);
 }
 #nav-menu-container {
+    grid-area: fixed-nav;
     height: 100vh;
     background-color: var(--nav-color);
     max-width: 80vw;
@@ -155,4 +156,20 @@
 }
 #nav-background-clicker-shown-nav:hover{
     cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+    #hamburger-spans {
+        display:none;
+    }
+    #nav-menu-container,
+    .hidden-nav,
+    .shown-nav{
+        display: block;
+        position:fixed;
+        margin-left: 0;
+    }
+    #nav-title {
+        display:none;
+    }
 }
