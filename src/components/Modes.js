@@ -105,26 +105,34 @@ class Modes extends Component {
 
                 { /* Buttons */ }
 
-                <div onClick={this.decrementMode} className="center-grid-area left-btn">
-
+                <div className="center-grid-area left-btn-area" >
+                    <button onClick={this.decrementMode} className="left-btn btn">
                     <img className="fa" src={chevronLeft} alt="" />
+                    </button>
+
                 </div>
-                <div onClick={this.changeMode} className="center-grid-area mode-btn">
+                <div className="center-grid-area mode-btn-area">
+                    <button onClick={this.changeMode} className="mode-btn btn" >
                     <img className="fa" src={list} alt="" />
                     <span className="btn-text">
                         Choose Mode 
                     </span>
+                    </button>
 
                 </div>
-                <div onClick={this.incrementMode} className="center-grid-area right-btn">
+                <div className="center-grid-area right-btn-area">
+                    <button onClick={this.incrementMode} className="right-btn btn">
                     <img className="fa" src={chevronRight} alt="" />
+                    </button>
                 </div>
-                <div onClick={this.changePitch} className="center-grid-area pitch-btn">
-
+                <div  className="center-grid-area pitch-btn-area">
+                    <button onClick={this.changePitch} className="pitch-btn btn">
                     <img className="fa" src={music} alt="" />
                         <span className="btn-text">
                         Starting Pitch 
                         </span>
+                    </button>
+
                 </div>
             </div>
         );
