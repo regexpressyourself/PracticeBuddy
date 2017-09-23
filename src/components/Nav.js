@@ -72,7 +72,7 @@ class Nav extends Component {
                 </div>
                 <div id={"nav-background-clicker-"+this.state.nav_element_class}>
                 </div>
-                    <h2 className={this.state.nav_element_class+"-reg-title"} id="nav-title">Practice Buddy</h2>
+                <a href="/" ><h2 className={this.state.nav_element_class+"-reg-title"} id="nav-title">Practice Buddy</h2></a>
             </div>
         );
     }

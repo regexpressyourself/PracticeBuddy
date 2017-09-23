@@ -85,7 +85,9 @@
     margin-top: 0;
     margin-bottom: 0;
     font-size: 90%;
-    font-weight: 400;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-color);
 }
 #collapsed-nav-title {
     display: flex;
@@ -96,11 +98,11 @@
     height:70px;
     margin: 0;
     font-size: 90%;
-    font-weight: 400;
     position: absolute;
     cursor:pointer;
     text-decoration: none;
     color: var(--dark-color);
+    font-weight: 600;
 }
 .hidden-nav {
     margin-left: -260px;
@@ -158,7 +160,7 @@
     cursor: pointer;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
     #hamburger-spans {
         display:none;
     }
@@ -169,7 +171,10 @@
         position:fixed;
         margin-left: 0;
     }
-    #nav-title {
+    #collapsed-nav-title {
         display:none;
+    }
+    #nav-title {
+        padding-left: 260px
     }
 }
