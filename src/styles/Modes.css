@@ -1,0 +1,78 @@
+#mode-container {
+    background-color: var(--bg-color);
+    grid-area: body;
+    height: 100%;
+    display:grid;
+    grid-template-columns:  1fr 2fr 1fr;
+    grid-template-rows: 2fr 3fr 1fr 1fr;
+    grid-auto-rows: auto;
+    text-align:center;
+    grid-template-areas: "header   header    header"
+                         "note-section note-section note-section"
+                         "left-btn mode-btn  right-btn"
+                         "left-btn pitch-btn right-btn";
+ }
+#mode-title {
+    margin-bottom: 5px;
+}
+
+#mode-blurb{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.note-section{
+    grid-area: note-section;
+}
+.center-grid-area {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-btn {
+    grid-area: left-btn;
+    background-color: var(--nav-color);
+}
+.mode-btn {
+    grid-area: mode-btn;
+    background-color: var(--red-color);
+    display:grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 5px;
+}
+.right-btn{
+    grid-area: right-btn;
+    background-color: var(--nav-color);
+}
+.right-btn:hover, 
+.left-btn:hover,
+.mode-btn:hover,
+.pitch-btn:hover {
+    cursor: pointer;
+}
+.pitch-btn {
+    grid-area: pitch-btn;
+    background-color: var(--blue-color);
+    display:grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 5px;
+}
+.btn-text {
+    padding:0;
+    margin:0;
+    font-size: 75%;
+}
+
+@media screen and (min-width: 700px) {
+#mode-container {
+    /*grid-template-columns:  1fr 1fr 2fr 1fr;
+    grid-template-areas: "nav nav      nav       nav"
+                         "nav header   header    header"
+                         "nav note-section note-section note-section"
+                         "nav left-btn mode-btn  right-btn"
+                         "nav left-btn pitch-btn right-btn";
+                         */
+                     }
+                 }

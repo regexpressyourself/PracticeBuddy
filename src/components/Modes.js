@@ -1,16 +1,21 @@
 import React, { Component} from 'react';
-import NoteSection from './NoteSection';
-import Nav from './Nav';
-import chevronLeft from '../statics/feather/chevron-left.svg';
-import chevronRight from '../statics/feather/chevron-right.svg';
-import music from '../statics/feather/music.svg';
-import list from '../statics/feather/list.svg';
+import NoteSection         from './NoteSection';
+import '../styles/Modes.css';
+import app_data            from '../config/data.js';
+import chevronLeft         from '../statics/feather/chevron-left.svg';
+import chevronRight        from '../statics/feather/chevron-right.svg';
+import music               from '../statics/feather/music.svg';
+import list                from '../statics/feather/list.svg';
 
 
-class ModeArea extends Component {
+class Modes extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            modes:                  app_data.modes,
+            mode_to_chromatic:      app_data.mode_to_chromatic,
+            sharp_based_chromatic:  app_data.sharp_based_chromatic,
+            flat_based_chromatic:   app_data.flat_based_chromatic,
             current_mode: 0,
             current_offset: 0,
             notes_array    : [],
@@ -28,9 +33,9 @@ class ModeArea extends Component {
         let notes_array   = [];
         let interval_array = [];
         let blurb_array    = [];
-        let mode_to_chromatic = this.props.mode_data.mode_to_chromatic;
+        let mode_to_chromatic = this.state.mode_to_chromatic;
         let i              = 0;
-        for (let mode of this.props.mode_data.modes) {
+        for (let mode of this.state.modes) {
             header_array.push(
                 <h1 id="mode-title" key={i++}>{mode.name}</h1>
             );
@@ -48,8 +53,7 @@ class ModeArea extends Component {
             header_array: header_array,
             interval_array: interval_array,
             notes_array: notes_array,
-            blurb_array: blurb_array,
-            data: this.props.mode_data
+            blurb_array: blurb_array
         });
     }
 
@@ -79,7 +83,6 @@ class ModeArea extends Component {
     render() {
         return (
             <div id="mode-container">
-                <Nav />
 
                 {/* Mode and Blurb */}
 
@@ -95,9 +98,9 @@ class ModeArea extends Component {
                 <NoteSection notes={this.state.notes_array[this.state.current_mode]} 
                     intervals={this.state.interval_array[this.state.current_mode]}
                     offset={this.state.current_offset}
-                    mode_to_chromatic={this.state.data.mode_to_chromatic}
-                    sharp_based_chromatic={this.state.data.sharp_based_chromatic}
-                    flat_based_chromatic={this.state.data.flat_based_chromatic}
+                    mode_to_chromatic={this.state.mode_to_chromatic}
+                    sharp_based_chromatic={this.state.sharp_based_chromatic}
+                    flat_based_chromatic={this.state.flat_based_chromatic}
                 />
 
                 { /* Buttons */ }
@@ -128,4 +131,4 @@ class ModeArea extends Component {
     }
 }
 
-export default ModeArea;
+export default Modes;
