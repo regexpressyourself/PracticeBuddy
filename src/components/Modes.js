@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
 import NoteSection         from './NoteSection';
+import ModeChooser         from './ModeChooser';
+import NoteChooser         from './NoteChooser';
 import '../styles/Modes.css';
 import app_data            from '../config/data.js';
 import chevronLeft         from '../statics/feather/chevron-left.svg';
@@ -17,6 +19,7 @@ class Modes extends Component {
             sharp_based_chromatic:  app_data.sharp_based_chromatic,
             flat_based_chromatic:   app_data.flat_based_chromatic,
             mode_list_display: "none",
+            note_list_display: "none",
             current_mode: 0,
             current_offset: 0,
             notes_array    : [],
@@ -31,6 +34,7 @@ class Modes extends Component {
         this.changeMode= this.changeMode.bind(this);
         this.changePitch= this.changePitch.bind(this);
         this.handleKeypress= this.handleKeypress.bind(this);
+        this.changeToMode= this.changeToMode.bind(this);
     }
 
     componentDidMount() {
@@ -126,43 +130,9 @@ class Modes extends Component {
     render() {
         return (
             <div id="mode-container">
-                <div style={{display: this.state.mode_list_display}} className="change-mode-list">
-                    <li onClick={() => this.changeToMode("Ionian")}>
-                        <p>
-                            Ionian
-                        </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Dorian")}>
-                        <p>
-                        Dorian
-                    </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Phrygian")}>
-                        <p>
-                        Phrygian
-                    </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Lydian")}>
-                        <p>
-                        Lydian
-                    </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Mixolydian")}>
-                        <p>
-                        Mixolydian
-                    </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Aeolian")}>
-                        <p>
-                        Aeolian
-                    </p>
-                    </li>
-                    <li onClick={() => this.changeToMode("Locrian")} style={{ border:"none" }}>
-                        <p>
-                        Locrian
-                    </p>
-                    </li>
-                </div>
+                <ModeChooser changeToMode={this.changeToMode} 
+                    mode_list_display={this.state.mode_list_display} />
+                <NoteChooser note_list_display={this.state.note_list_display} />
 
                 {/* Mode and Blurb */}
 
