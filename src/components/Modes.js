@@ -104,6 +104,15 @@ class Modes extends Component {
     render() {
         return (
             <div id="mode-container">
+                <div className="change-mode-list">
+                        <li>Ionian</li>
+                        <li>Dorian</li>
+                        <li>Phrygian</li>
+                        <li>Lydian</li>
+                        <li>Mixolydian</li>
+                        <li>Aeolian</li>
+                        <li>Locrian</li>
+                </div>
 
                 {/* Mode and Blurb */}
 
