@@ -24,14 +24,11 @@ i {
 }
 
 #home {
-    width: 90%;
-    height: 89%;
     grid-area: body;
     display:flex;
     flex-flow:column;
     align-items:center;
     justify-content:center;
-    padding: 5%;
 }
 #homepage-image {
     max-width: 100%;
@@ -42,7 +39,7 @@ i {
     height: 100vh;
     display: grid;
     grid-template-columns:  1fr;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 10% 90%;
     grid-auto-rows: auto;
     text-align:center;
     grid-template-areas: "nav"
