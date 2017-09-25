@@ -16,6 +16,7 @@ class Modes extends Component {
             mode_to_chromatic:      app_data.mode_to_chromatic,
             sharp_based_chromatic:  app_data.sharp_based_chromatic,
             flat_based_chromatic:   app_data.flat_based_chromatic,
+            mode_list_display: "none",
             current_mode: 0,
             current_offset: 0,
             notes_array    : [],
@@ -93,12 +94,22 @@ class Modes extends Component {
     changeMode() {
         this.setState({
             current_offset: (this.state.current_offset + 1)
-        }, () => {console.log(this.state.current_offset)});
+        });
     }
     changePitch() {
         this.setState({
             current_offset: (this.state.current_offset + 11) 
-        }, () => {console.log(this.state.current_offset)});
+        });
+    }
+    unsetModeChooser() {
+        this.setState({
+            mode_list_display: "none"
+        });
+    }
+    setModeChooser() {
+        this.setState({
+            mode_list_display: "flex"
+        });
     }
     changeToMode(new_mode) {
         let current_mode = 0;
@@ -109,33 +120,47 @@ class Modes extends Component {
         }
         this.setState({
             current_mode: current_mode
-        });
+        }, this.unsetModeChooser());
     }
 
     render() {
         return (
             <div id="mode-container">
-                <div className="change-mode-list">
-                    <li onClick={this.changeToMode("Ionian")}>
-                        Ionian
+                <div style={{display: this.state.mode_list_display}} className="change-mode-list">
+                    <li onClick={() => this.changeToMode("Ionian")}>
+                        <p>
+                            Ionian
+                        </p>
                     </li>
-                    <li onClick={this.changeToMode("Dorian")}>
+                    <li onClick={() => this.changeToMode("Dorian")}>
+                        <p>
                         Dorian
+                    </p>
                     </li>
-                    <li onClick={this.changeToMode("Phrygian")}>
+                    <li onClick={() => this.changeToMode("Phrygian")}>
+                        <p>
                         Phrygian
+                    </p>
                     </li>
-                    <li onClick={this.changeToMode("Lydian")}>
+                    <li onClick={() => this.changeToMode("Lydian")}>
+                        <p>
                         Lydian
+                    </p>
                     </li>
-                    <li onClick={this.changeToMode("Mixolydian")}>
+                    <li onClick={() => this.changeToMode("Mixolydian")}>
+                        <p>
                         Mixolydian
+                    </p>
                     </li>
-                    <li onClick={this.changeToMode("Aeolian")}>
+                    <li onClick={() => this.changeToMode("Aeolian")}>
+                        <p>
                         Aeolian
+                    </p>
                     </li>
-                    <li onClick={this.changeToMode("Locrian")} style={{ border:"none" }}>
+                    <li onClick={() => this.changeToMode("Locrian")} style={{ border:"none" }}>
+                        <p>
                         Locrian
+                    </p>
                     </li>
                 </div>
 
@@ -167,7 +192,7 @@ class Modes extends Component {
 
                 </div>
                 <div className="center-grid-area mode-btn-area">
-                    <button onClick={this.changeMode} className="mode-btn btn" >
+                    <button onClick={() => this.setModeChooser()} className="mode-btn btn" >
                     <img className="fa" src={list} alt="" />
                     <span className="btn-text">
                         Choose Mode 

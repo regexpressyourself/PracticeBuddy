@@ -81,25 +81,36 @@
 .change-mode-list {
     position:fixed;
     bottom:0;
+    left:260px;
+    right:0;
     background-color: var(--red-color);
     display:flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     list-style: none;
     font-size: 150%;
-    width: 100%;
     top: 70px;
+    z-index: 10000;
+    align-content: flex-start;
+    justify-content: flex-start;
 }
 .change-mode-list >li{
     flex:1;
-    padding:3px 5% 3px;
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    align-self: flex-start;
     border-bottom: 1px solid var(--dark-color);
-    padding-right: 100%;
+    padding-left: 5%;
+    padding-right: 95%;
 }
 .change-mode-list >li:hover{
     background: var(--dark-color);
     color: var(--bg-color);
+}
+.change-mode-list >li >p{
+    padding:0;
+    margin:0;
 }
 
 @media screen and (min-width: 768px) {
