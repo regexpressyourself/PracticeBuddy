@@ -7,7 +7,7 @@ class NoteSection extends Component {
         this.state = {
             intervals_array: props.intervals,
             notes_array: props.notes,
-            sharp_based_chromatic: props.sharp_based_chromatic,
+            flat_based_chromatic: props.flat_based_chromatic,
             flat_based_chromatic: props.flat_based_chromatic,
             offset: props.offset
         };
@@ -19,13 +19,23 @@ class NoteSection extends Component {
         let i = 0;
         notes = nextProps.notes.map((note) => {
             note = note + this.state.offset;
+            note = this.state.flat_based_chromatic[note];
+            if (note.includes("#")) {
+                note= <span>{note.replace("#","")}<span className="flat-sharp">#</span></span>
+            }
+            else if (note.includes("b")) {
+                note= <span>{note.replace("b","")}<span className="flat-sharp">b</span></span>
+            }
             return (
                 <span key={i++} className={"note-cell note-cell"+i}>
-                    {this.state.sharp_based_chromatic[note]}
+                    {note}
                 </span>
             );
         });
         intervals = nextProps.intervals.map((interval) => {
+            if (interval.includes("-")) {
+                interval = <span>{interval.replace("-","")}<span className="flat-sharp">-</span></span>
+            }
             return (
                 <span key={i} 
                     className={" interval-cell interval-cell"+i++}>
@@ -52,11 +62,10 @@ class NoteSection extends Component {
         let i = 0;
         notes = this.state.notes_array.map((note) => {
             note = (note + this.state.offset) % 12;
-            console.log("note: " + note);
-            console.log("converted note: " + this.state.sharp_based_chromatic[note]);
+            note = this.state.flat_based_chromatic[note];
             return (
                 <span key={i++} className={"note-cell note-cell"+i}>
-                    {this.state.sharp_based_chromatic[note]}
+                    {note}
                 </span>
             );
         });

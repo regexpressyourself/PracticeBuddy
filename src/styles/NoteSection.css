@@ -6,17 +6,26 @@
     grid-auto-rows: auto;
     height:100%;
     text-align:center;
-    width:66vw;
+    max-width:95vw;
+
 }
-.note-cell {
-    flex-flow: row wrap;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
+.note-cell,
 .interval-cell {
     flex-flow: row wrap;
     display: flex;
     justify-content: center;
+    padding: 0px 3px;
+}
+.note-cell {
+    align-items: flex-start;
+}
+.interval-cell {
     align-items: flex-end;
+}
+
+.flat-sharp {
+    font-size: 66%;
+    margin-top: -40%;
+    position:relative;
+    bottom: 10px;
 }
