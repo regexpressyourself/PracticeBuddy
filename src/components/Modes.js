@@ -100,18 +100,43 @@ class Modes extends Component {
             current_offset: (this.state.current_offset + 11) 
         }, () => {console.log(this.state.current_offset)});
     }
+    changeToMode(new_mode) {
+        let current_mode = 0;
+        let mode_string = this.state.modes[current_mode].name;
+            while ((mode_string !== new_mode) && current_mode < 8) {
+            current_mode++;
+        mode_string = this.state.modes[current_mode].name;
+        }
+        this.setState({
+            current_mode: current_mode
+        });
+    }
 
     render() {
         return (
             <div id="mode-container">
                 <div className="change-mode-list">
-                        <li>Ionian</li>
-                        <li>Dorian</li>
-                        <li>Phrygian</li>
-                        <li>Lydian</li>
-                        <li>Mixolydian</li>
-                        <li>Aeolian</li>
-                        <li>Locrian</li>
+                    <li onClick={this.changeToMode("Ionian")}>
+                        Ionian
+                    </li>
+                    <li onClick={this.changeToMode("Dorian")}>
+                        Dorian
+                    </li>
+                    <li onClick={this.changeToMode("Phrygian")}>
+                        Phrygian
+                    </li>
+                    <li onClick={this.changeToMode("Lydian")}>
+                        Lydian
+                    </li>
+                    <li onClick={this.changeToMode("Mixolydian")}>
+                        Mixolydian
+                    </li>
+                    <li onClick={this.changeToMode("Aeolian")}>
+                        Aeolian
+                    </li>
+                    <li onClick={this.changeToMode("Locrian")} style={{ border:"none" }}>
+                        Locrian
+                    </li>
                 </div>
 
                 {/* Mode and Blurb */}
