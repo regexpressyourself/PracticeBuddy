@@ -25,14 +25,22 @@ i {
     font-style: normal;
 }
 
-#home {
-    grid-area: body;
+#home ,
+#comingsoon {
     display:flex;
     flex-flow:column;
     align-items:center;
     justify-content:center;
 }
-#homepage-image {
+#home {
+    grid-area: body;
+}
+#comingsoon{
+    grid-area: body;
+    padding:5%;
+}
+#homepage-image, 
+#comingsoon-image{
     width: 100%;
     height: 100%;
     background-image:url('../statics/img/practicebuddy_logo.png');
@@ -45,11 +53,10 @@ i {
     height: 100vh;
     display: grid;
     grid-template-columns:  1fr;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 90%;
     grid-auto-rows: auto;
     text-align:center;
-    grid-template-areas: "nav"
-                         "body"
+    grid-template-areas: "body";
 
 }
 .nav {
@@ -69,9 +76,18 @@ i {
 
 @media screen and (min-width: 768px) {
     #main-container{
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: 70px 1fr;
-    grid-template-areas: "fixed-nav nav"
-                         "fixed-nav body"
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "body"
                      }
+#comingsoon{
+    font-size: 120%;
+}
+}
+@media screen and (max-width: 768px) {
+
+
+#comingsoon{
+    font-size: 75%;
+}
 }

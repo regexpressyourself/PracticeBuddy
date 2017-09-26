@@ -12,7 +12,7 @@ class Home extends Component {
                     Practice Buddy is a quick and easy way to reference musical modes, chords, and charts. 
                 </p>
             </div>
-        );
+ 
     }
 }
 
