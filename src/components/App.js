@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import '../styles/index.css';
 import ComingSoon from './ComingSoon';
-import {
-    BrowserRouter as Router,
-    Route
-} from 'react-router-dom'
 
 
 class App extends Component {
@@ -17,11 +13,9 @@ class App extends Component {
     }
     render() {
         return (
-            <Router>
-                <div id="main-container">
-                    <Route exact path="/" component={ComingSoon}/>
-                </div>
-            </Router>
+            <div id="main-container">
+                <ComingSoon />
+            </div>
         );
     }
 }
