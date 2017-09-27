@@ -129,7 +129,7 @@ To build a production version of the app, with all React code loaded into a bund
 
 ## Contributing
 
-As always, I'm always happy to receive pull requests, questions/issues regarding code, and feature requests. 
+As always, I'm very happy to receive pull requests, questions/issues regarding code, and feature requests. 
 
 Practice Buddy is under active development, poised for a complete feature set by January 2018. If you are interested in contributing, check out the existing [projects](https://github.com/regexpressyourself/PracticeBuddy/projects) and [issues](https://github.com/regexpressyourself/PracticeBuddy/issues), and contact me if anything sounds interesting to you.
 
