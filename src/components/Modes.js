@@ -25,9 +25,7 @@ class Modes extends Component {
             notes_array    : [],
             header_array   : [],
             interval_array : [],
-            blurb_array    : [],
-            left_keys:  ['H', 'h', 'j', 'J', 'ArrowLeft', 'ArrowDown', 'Backspace'],
-            right_keys:  ['L', 'l', 'k', 'K', 'ArrowRight', 'ArrowUp', 'Space']
+            blurb_array    : []
         };
         this.incrementMode= this.incrementMode.bind(this);
         this.decrementMode= this.decrementMode.bind(this);
@@ -74,10 +72,17 @@ class Modes extends Component {
     }
     handleKeypress(event) {
         let key = event.key;
-        if (this.state.left_keys.indexOf(key) > -1) {
+
+        let left_keys  = ['H', 'h', 'j', 'J', 
+            'ArrowLeft', 'ArrowDown', 'Backspace'];
+
+        let right_keys  = ['L', 'l', 'k', 'K', 
+            'ArrowRight', 'ArrowUp', 'Space'];
+
+        if (left_keys.indexOf(key) > -1) {
             this.decrementMode();
         }
-        else if (this.state.right_keys.indexOf(key) > -1) {
+        else if (right_keys.indexOf(key) > -1) {
             this.incrementMode();
         }
 
