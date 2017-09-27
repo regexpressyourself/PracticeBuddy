@@ -1,4 +1,4 @@
-<img alt="Practice Buddy" align:"right" src="https://regexpressyourself.github.io/public/practicebuddy_logo.png" width="400px"/>
+<img alt="Practice Buddy" align:"right" src="https://regexpressyourself.github.io/public/practicebuddy_logo.png" width="400px" />
 
 # Practice Buddy
 
