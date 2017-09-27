@@ -3,30 +3,13 @@
 
 # Practice Buddy
 
-
 A web app to help practice modes, learn chords, and chart tunes for guitar and bass players.
 
-A live version will be coming
-[See it live here!](https://smessina.com/gitflow/#/)
+[Coming Soon!](https://smessina.com/practicebuddy)
 
-## Components
-
-### Modes
-
-Practice Buddy will allow show all seven modes and their corresponding scales. The modes can be listed as intervals or direct notes.
-
-### Chords
-
-Practice Buddy will map out chords for you. You can chose Ebm7, and the notes (and their intervals) will be displayed
-
-## Charts
-
-A log of Nashville-system based charts would be incredibly useful in the long term, but may require user accounts, or user upload functionality that will not be in v 1.0 of Practice Buddy.
-
-
-
-
-
+**_Currently in development._**
+* **_See [contributing](#contributing) to learn how to help_**
+* **_See [the projects section](https://github.com/regexpressyourself/PracticeBuddy/projects) to track progress_**
 
 ## Table of Contents
 
@@ -40,11 +23,28 @@ A log of Nashville-system based charts would be incredibly useful in the long te
 
 ## Introduction
 
-Git Flow walks you through a typical merge workflow with git. Git Flow presents each step needed to use git as an interactive flowchart. As the tutorial progresses, users choose paths that are relevant to their needs, making sure that unnesescary information gets filtered out.
+Practice Buddy is currently in development. The final product will consist of three major components: modes, chords, and charts. The components are detailed below.
+
+### Components
+
+#### Modes (in active development)
+
+Practice Buddy will allow show all seven modes and their corresponding scales. The modes are listed as intervals and actual pitches, and can be adjusted to any starting pitch.
+
+#### Chords (planned)
+
+Practice Buddy will map out chords for you. You can chose Ebm7, and the notes (and their intervals) will be displayed, along with a chart showing the chord on guitar or bass.
+
+#### Charts (planned)
+
+A database of [Nashville system](https://en.wikipedia.org/wiki/Nashville_number_system) charts will be available for creation, retrieval, update, and deletion.
+
+Note: this feature may require adding user accounts to the application.
+
 
 ## Getting Started
 
-Git Flow uses Webpack and NPM to build and transpile all React code into regular HTML, CSS, and Javascript.
+Practice Buddy uses Webpack and NPM to build and transpile all React code into regular HTML, CSS, and Javascript.
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ You are welcome to use [Yarn](https://yarnpkg.com/en/) instead of NPM if you pre
 First, clone the project to a local directory.
 
 ```
-   git clone https://github.com/regexpressyourself/gitflow.git && cd gitflow
+   git clone https://github.com/regexpressyourself/PracticeBuddy.git && cd PracticeBuddy
 ```
 
 Next, install the dependencies using NPM or Yarn.
@@ -80,7 +80,7 @@ Next, install the dependencies using NPM or Yarn.
 
 ### Development Environment
 
-To run Git Flow in development mode, you will need to run the `start` script declared in `package.json`.
+To run Practice Buddy in development mode, you will need to run the `start` script declared in `package.json`.
 
 #### Using NPM
 
@@ -114,7 +114,7 @@ To build a production version of the app, with all React code loaded into a bund
    yarn run production
 ```
 
-   This will leave you with an `index.html` and an `index_bundle.js` file in the project root. Hosting these files from the same location will serve the production build of Git Flow.
+   This will leave you with an `index.html` and an `index_bundle.js` file in the build directory. Hosting these files from the same location will serve the production build of Practice Buddy.
 
 **[Back to top](#table-of-contents)**
 
@@ -122,14 +122,17 @@ To build a production version of the app, with all React code loaded into a bund
 
 * [React](https://facebook.github.io/react/) - The web framework that powers the site
 * [Webpack](https://webpack.github.io/) - A module builder automate development and production build processes
-* [React Router v. 3](https://reacttraining.com/react-router/) - Sits on top of React to enable route-based views without a backend server
+* [React Router v. 4](https://reacttraining.com/react-router/) - Sits on top of React to enable route-based views without a backend server
 * [Babel](https://babeljs.io/) - Transpiler to convert raw React code into browser-ready HTML and Javascript
+* [create-react-app](https://github.com/facebookincubator/create-react-app) - Boilerplate React configuration from Facebook
 
 **[Back to top](#table-of-contents)**
 
 ## Contributing
 
-I'm always happy to receive pull requests, questions/issues regarding code, and feature requests on all my projects. Please feel free to open an issue or submit a pull request.
+As always, I'm always happy to receive pull requests, questions/issues regarding code, and feature requests. 
+
+Practice Buddy is under active development, poised for a complete feature set by January 2018. If you are interested in contributing, check out the existing [projects](https://github.com/regexpressyourself/PracticeBuddy/projects) and [issues](https://github.com/regexpressyourself/PracticeBuddy/issues), and contact me if anything sounds interesting to you.
 
 **[Back to top](#table-of-contents)**
 
@@ -141,7 +144,7 @@ I'm always happy to receive pull requests, questions/issues regarding code, and 
 
 ## License
 
-Git Flow is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Practice Buddy is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 
 **[Back to top](#table-of-contents)**
