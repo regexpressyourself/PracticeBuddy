@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import '../styles/index.css';
-import Nav from './Nav';
+import Nabbar from './Nabbar';
 import Home from '../components/Home';
 import Modes from '../components/Modes';
 import Chords from '../components/Chords';
@@ -17,6 +17,26 @@ class App extends Component {
     constructor(props) {
         super(props);
         console.log(props);
+        this.state = {
+            nav_menu_items:  [
+                {
+                    href: "/modes",
+                    title: "# Modes"
+                },
+                {
+                    href: "/chords",
+                    title: "# Chords"
+                },
+                {
+                    href: "/charts",
+                    title: "# Charts"
+                },
+                {
+                    href: "about",
+                    title: "# About"
+                }
+            ]
+        };
     }
     componentWillMount() {
     }
@@ -24,7 +44,7 @@ class App extends Component {
         return (
             <Router>
                 <div id="main-container">
-                    <Nav />
+                    <Nabbar menu_items={this.state.nav_menu_items} />
                     <Route exact path="/" component={Home}/>
                     <Route path="/modes" component={Modes}/>
                     <Route path="/chords" component={Chords}/>

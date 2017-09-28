@@ -1,0 +1,266 @@
+/***********************************************************
+ * Color Scheme: requires CSS variables
+ ***********************************************************/
+:root {
+    --bg-color:        #f3efd7;
+    --nav-color:       #ffe66d;
+    --nav-light-color: #ffefa2;
+    --dark-color:      #292f36;
+}
+
+/***********************************************************
+ * Begin overrides and boilerplate layout
+ ***********************************************************/
+#main-container {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 70px 1fr; 
+    grid-auto-rows: auto;
+    text-align:center;
+    grid-template-areas: "nav"
+    "body"
+}
+.Body{
+    grid-area: body;
+}
+
+/***********************************************************
+ * Begin general nav rules
+ ***********************************************************/
+
+.nav {
+    grid-area: nav;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 30;
+    background-color: var(--nav-color);
+    display: flex;
+    flex-direction: row;
+}
+.hidden-nav {
+    margin-left: -260px;
+}
+.shown-nav{
+    margin-left: 0px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23);
+}
+
+/***********************************************************
+ * Begin top bar rules
+ ***********************************************************/
+
+.top-bar {
+    transition: .4s;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    height: 70px;
+}
+.top-bar.shown-nav-top-bar{
+    width:190px;
+    margin-left: -15px;
+}
+
+/***********************************************************
+ * Begin nav title rules
+ ***********************************************************/
+
+#nav-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    z-index: 50;
+    transition: .4s;
+    padding: 0;
+    font-size: 1em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#nav-title > a {
+    color: var(--dark-color);
+    text-decoration: none;
+    width: 100%;
+}
+
+/***********************************************************
+ * Begin hamburger menu rules
+ ***********************************************************/
+
+#hamburger {
+    margin-top: 0px;
+    padding-top: 30px;
+    height: 30px;
+    transition: 0.4s;
+    position:absolute;
+    z-index: 60;
+    cursor:pointer;
+}
+#hamburger:hover {
+    cursor:pointer;
+}
+.top-bun,
+.meat,
+.bottom-bun {
+    transition: 0.3s;
+    display: block;
+    width: 40px;
+    height: 5.5px;
+    position: relative;
+    background: var(--dark-color);
+    border-radius: 10px;
+    z-index: 10;
+}
+.hidden-nav-burger {
+    left: 15px;
+    top: -10px;
+}
+.hidden-nav-burger> .top-bun {
+    transform: rotate(0deg);
+    margin-bottom: 5px;
+}
+.hidden-nav-burger > .bottom-bun {
+    transform: rotate(0deg);
+    margin-top: 5px;
+}
+.hidden-nav-burger > .meat {
+    opacity: 1;
+}
+.shown-nav-burger {
+    left: 210px;
+    top: -5px;
+}
+.shown-nav-burger > .top-bun {
+    transform: rotate(45deg);
+    margin-top: 5px;
+}
+.shown-nav-burger > .bottom-bun {
+    margin-top: -10px;
+    transform: rotate(-45deg);
+}
+.shown-nav-burger > .meat {
+    opacity: 0;
+}
+
+/***********************************************************
+ * Begin nav menu rules
+ ***********************************************************/
+
+#nav-menu-container {
+    grid-area: fixed-nav;
+    position:absolute;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    height: 100vh;
+    width: 260px;
+    background-color: var(--nav-color);
+    transition: 0.3s;
+    z-index: 40;
+}
+#nav-menu {
+    margin-top: 70px;
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.nav-menu-item {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    width: 260px;
+    height: 90px;
+    background-color: var(--nav-light-color);
+    cursor:pointer;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+.nav-menu-link{
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    cursor:pointer;
+    text-align: left;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+.nav-menu-item:nth-child(even) {
+    background: var(--nav-color);
+}
+.nav-menu-link:hover {
+    background: var(--dark-color);
+    color: var(--bg-color);
+}
+
+/***********************************************************
+ * Begin background clicker
+ *
+ *      The background clicker is necessary for mobile users 
+ *      to be able to click away from the open nav bar to 
+ *      close it. It sets an invisible element over the body 
+ *      grid area that sets cursor to pointer. This allows 
+ *      mobile taps in the elements to register as mouse clicks. 
+ *
+ *      See Stack Overflow for source: 
+ *      https://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery
+ ***********************************************************/
+
+#nav-background-clicker-shown-nav{
+    top: 70px;
+    position: absolute;
+    width: calc(100vw - 260px);
+    margin-left: 260px;
+    height: 100vh;
+    cursor: pointer;
+}
+#nav-background-clicker-shown-nav:hover{
+    cursor: pointer;
+}
+
+/***********************************************************
+ * Begin media queries
+ ***********************************************************/
+
+@media screen and (min-width: 768px) {
+    .App {
+        grid-template-columns: 260px 1fr;
+        grid-template-rows: 70px 1fr;
+        grid-template-areas: "fixed-nav nav"
+        "fixed-nav body"
+    }
+    .shown-nav {
+        box-shadow: none;
+    }
+    #hamburger {
+        display:none;
+    }
+    #nav-menu-container,
+    .hidden-nav,
+    .shown-nav{
+        display: block;
+        position:fixed;
+        margin-left: 0;
+    }
+    #nav-title {
+        margin-left: 260px;
+    }
+    .top-bar.shown-nav-top-bar{
+        width:100%;
+    }
+}
+

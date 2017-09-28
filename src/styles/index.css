@@ -41,17 +41,6 @@ i {
     background-position: center;
 }
 
-#main-container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns:  1fr;
-    grid-template-rows: 10% 90%;
-    grid-auto-rows: auto;
-    text-align:center;
-    grid-template-areas: "nav"
-                         "body"
-
-}
 .nav {
     grid-area: nav;
     /*position: fixed;*/
