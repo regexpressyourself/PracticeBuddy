@@ -262,5 +262,11 @@
     .top-bar.shown-nav-top-bar{
         width:100%;
     }
+    #main-container{
+        grid-template-columns: 260px 1fr;
+        grid-template-rows: 70px 1fr;
+        grid-template-areas: "fixed-nav nav"
+        "fixed-nav body"
+    }
 }
 
