@@ -4,7 +4,7 @@
 
 A web app to help practice modes, learn chords, and chart tunes for guitar and bass players.
 
-[Coming Soon!](https://smessina.com/practicebuddy)
+[See it live and track progress!](https://smessina.com/practicebuddy)
 
 **_Currently in development._**
 * **_See [contributing](#contributing) to learn how to help_**
