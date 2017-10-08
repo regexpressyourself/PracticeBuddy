@@ -44,11 +44,11 @@ class App extends Component {
             <Router basename="/practicebuddy">
                 <div id="main-container">
                     <Nabbar menu_items={this.state.nav_menu_items} />
-                    <Route exact path="/practicebuddy" component={Home}/>
-                    <Route path="/practicebuddy/modes" component={Modes}/>
-                    <Route path="/practicebuddy/chords" component={Chords}/>
-                    <Route path="/practicebuddy/charts" component={Charts}/>
-                    <Route path="/practicebuddy/about" component={About}/>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/modes" component={Modes}/>
+                    <Route path="/chords" component={Chords}/>
+                    <Route path="/charts" component={Charts}/>
+                    <Route path="/about" component={About}/>
                 </div>
             </Router>
             );
