@@ -1,7 +1,6 @@
-
-
 .chooser-list {
     position:fixed;
+    background-color: var(--dark-color);
     bottom:0;
     left:0px;
     right:0;
@@ -36,6 +35,82 @@
 
 .change-mode-list {
     background-color: var(--red-color);
+}
+
+.note-chooser-grid {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas: "note1 note1"
+    "note2 note3"
+    "note4 note5"
+    "note6 note7";
+    height: 100%;
+}
+.note-chooser-grid >span:hover,
+.flat-sharp-chooser-grid >span:hover {
+    background-color: var(--dark-color);
+    color: var(--bg-color);
+}
+.note-chooser-grid >span,
+.flat-sharp-chooser-grid >span {
+    color: var(--dark-color);
+    background-color: var(--blue-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.note-chooser-grid >span > span,
+.flat-sharp-chooser-grid >span > span{
+    color: inherit;
+    margin: auto;
+}
+.flat-sharp-chooser-grid {
+    background-color: var(--blue-color);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}
+
+#note-reminder {
+    color:  #6d7075;
+    border-bottom: 1px solid #6d7075;
+    height: 99%;
+}
+#note-reminder > span{
+}
+
+#note1 {
+    grid-area: note1;
+}
+#note2  {
+    grid-area: note2 ;
+}
+#note3 {
+    grid-area: note3;
+}
+#note4  {
+    grid-area: note4 ;
+}
+#note5 {
+    grid-area: note5;
+}
+#note6  {
+    grid-area: note6 ;
+}
+#note7 {
+    grid-area: note7;
+}
+.off {
+    display: none;
+}
+.on{
+    display: grid;
 }
 
 
