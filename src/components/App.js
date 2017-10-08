@@ -16,7 +16,6 @@ import {
 class App extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
             nav_menu_items:  [
                 {

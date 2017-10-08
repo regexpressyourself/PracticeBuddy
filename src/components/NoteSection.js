@@ -23,7 +23,7 @@ class NoteSection extends Component {
         notes = this.state.notes;
         if (nextProps.notes) {
             notes = nextProps.notes.map((note) => {
-                if (note === undefined) { return; }
+                if (note === undefined) { return -1; }
                 note = (note + offset) % 12;
                 note = chromatic[note];
                 if (note.includes("#")) {
@@ -46,7 +46,7 @@ class NoteSection extends Component {
         intervals=this.state.intervals;
         if (nextProps.intervals) {
             intervals = nextProps.intervals.map((interval) => {
-                if (!interval){ return; }
+                if (!interval){ return -1; }
                 if (interval.includes("-")) {
                     interval = <span>{interval.replace("-","")}<span className="flat-sharp">-</span></span>
                 }
@@ -73,7 +73,6 @@ class NoteSection extends Component {
 
     generateNotes(offset) {
         if (!offset) {offset=this.state.offset}
-        console.log("offset changed: " + offset);
         let new_notes = [];
         let intervals = [];
         let i = 0;

@@ -44,6 +44,7 @@ class NabbarMenu extends Component {
                     </li>
                 );
             }
+            else {return -1;}
         });
         this.setState({
             li_elements: li_elements

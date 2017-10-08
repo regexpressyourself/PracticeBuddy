@@ -153,8 +153,6 @@ class Modes extends Component {
             // natural starting pitches
             chromatic_array = this.state.flat_based_chromatic;
         }
-        console.log("new_note: "+new_note);
-        console.log("chrom_array: "+chromatic_array);
 
         while (chromatic_array[i] !== new_note && i < 20) {
             i++;

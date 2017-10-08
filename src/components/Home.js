@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import logo_image from '../statics/img/practicebuddy_logo.png';
 
 class Home extends Component {
 

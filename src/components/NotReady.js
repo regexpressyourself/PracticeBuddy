@@ -1,11 +1,7 @@
 import React, { Component} from 'react';
-import styles from '../styles/NotReady.css';
+import '../styles/NotReady.css';
 
 class NotReady extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="not-ready">

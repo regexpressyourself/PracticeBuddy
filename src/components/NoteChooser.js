@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import styles from '../styles/Choosers.css';
+import '../styles/Choosers.css';
 
 class NoteChooser extends Component {
     constructor(props) {
