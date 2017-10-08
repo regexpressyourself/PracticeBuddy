@@ -56,3 +56,15 @@ i {
 }
 
 
+.not-ready{
+    grid-area: body;
+}
+
+#modes-page,
+#chords-page,
+#about-page,
+#charts-page {
+    background-color: var(--bg-color);
+    grid-area: body;
+}
+

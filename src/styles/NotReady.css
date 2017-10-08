@@ -1,3 +1,23 @@
 .not-ready {
-    margin:auto;
+    margin: 10% 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--dark-color);
+}
+.github-link-btn {
+    font-family: inherit;
+    margin: auto;
+    height: 100px;
+    max-height: 20vh;
+    width: 300px;
+    max-width: 100%;
+    background-color: var(--blue-color);
+    color: var(--dark-color);
+    font-size: 100%;
+}
+.not-ready >p {
+    font-size: 66%;
 }
