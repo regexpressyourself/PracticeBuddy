@@ -9,8 +9,17 @@ let data = {
         "7": 11 , "7-": 10 , "7+": 12 ,
         "8": 12 , "8-": 11 , "8+": 13
     },
-    sharp_based_chromatic: ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", " B",  "C"],
-    flat_based_chromatic:  ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", " B",  "C"],
+    cool_notes: {
+        "A":["flat", "sharp"],
+        "B":["flat"],
+        "C":["sharp"],
+        "D":["sharp", "flat"],
+        "E":["flat"],
+        "F":["sharp"],
+        "G":["sharp", "flat"],
+    },
+    sharp_based_chromatic: ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",  "C"],
+    flat_based_chromatic:  ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B",  "C"],
     modes: [
         {
             name: "Ionian",
