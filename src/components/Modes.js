@@ -165,7 +165,7 @@ class Modes extends Component {
 
     render() {
         return (
-            <div id="mode-container">
+            <div id="modes-page">
                 <ModeChooser changeToMode={this.changeToMode} 
                     mode_list_display={this.state.mode_list_display} />
                 <NoteChooser changeToNote={this.changeToNote}

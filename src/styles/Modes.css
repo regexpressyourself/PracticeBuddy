@@ -1,6 +1,4 @@
-#mode-container {
-    background-color: var(--bg-color);
-    grid-area: body;
+#modes-page{
     display:grid;
     height: calc(100vh - 70px);
     grid-template-columns:  1fr 2fr 1fr;
@@ -80,7 +78,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    #mode-container {
+    #modes-page{
         display:grid;
         grid-template-rows: 2fr 3fr 1fr;
         grid-template-columns:  1fr 2fr 2fr 1fr;
