@@ -22,25 +22,25 @@ class NoteChooser extends Component {
         let is_sharp = this.state.cool_notes[note_name].indexOf("sharp") !== -1;
         let second_screen = [];
         let note_reminder = ( <span key="1" id="note-reminder">
-                                <span>
-                                    {note_name}
-                                </span>
-                            </span>);
-        let flat_span = ( <span key="2" onClick={() => this.storeFlatSharp('b')}>
             <span>
-            b
+                {note_name}
             </span>
-            </span>);
+        </span>);
+        let flat_span = ( <span key="2" onClick={() => this.storeFlatSharp('b') }>
+            <span>
+                b
+            </span>
+        </span>);
         let sharp_span = ( <span key="3" onClick={() => this.storeFlatSharp('#')}>
             <span>
-            #
+                #
             </span>
-            </span>);
+        </span>);
         let natural_span = ( <span key="4" onClick={() => this.storeFlatSharp('natural')}>
             <span>
-            natural
+                natural
             </span>
-            </span>);
+        </span>);
 
         if (is_flat && is_sharp) {
             second_screen = [ note_reminder, sharp_span, natural_span, flat_span ]
@@ -111,16 +111,16 @@ class NoteChooser extends Component {
                         onClick={() => this.storeNoteName('B')}>
                         <span>B</span>
                     </span>
+                </div>
+                <div className={"flat-sharp-chooser-grid " + this.state.flat_sharp_list_class}
+                    style={{ gridTemplateRows:"1fr repeat(" +
+                    (this.state.second_screen.length-1) +
+                    ", 2fr)" }} >
+                    {this.state.second_screen}
+                </div>
             </div>
-            <div className={"flat-sharp-chooser-grid " + this.state.flat_sharp_list_class}
-            style={{
-                gridTemplateRows:"1fr repeat("+(this.state.second_screen.length-1)+", 2fr)"
-            }} >
-            {this.state.second_screen}
-            </div>
-            </div>
-        );
-    }
+            );
+        }
 }
 
 export default NoteChooser;
