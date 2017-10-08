@@ -17,40 +17,52 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            main_component: <Home />,
             nav_menu_items:  [
                 {
-                    href: "practicebuddy/modes",
+                    onClick: () => this.replaceBody("modes"),
                     title: "# Modes"
                 },
                 {
-                    href: "practicebuddy/chords",
+                    onClick: () => this.replaceBody("chords"),
                     title: "# Chords"
                 },
                 {
-                    href: "practicebuddy/charts",
+                    onClick: () => this.replaceBody("charts"),
                     title: "# Charts"
                 },
                 {
-                    href: "practicebuddy/about",
+                    onClick: () => this.replaceBody("about"),
                     title: "# About"
                 }
             ]
         };
+        this.replaceBody = this.replaceBody.bind(this);
     }
-    componentWillMount() {
+    replaceBody(new_page) {
+        let main_component;
+        if (new_page === "modes") {
+            main_component = <Modes />;
+        }
+        else if (new_page === "about") {
+            main_component = <About />;
+        }
+        else if (new_page === "charts") {
+            main_component = <Charts />;
+        }
+        else if (new_page === "chords") {
+            main_component = <Chords />;
+        }
+        this.setState({
+            main_component: main_component
+        });
     }
     render() {
         return (
-            <Router basename="/practicebuddy">
                 <div id="main-container">
                     <Nabbar menu_items={this.state.nav_menu_items} />
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/modes" component={Modes}/>
-                    <Route path="/chords" component={Chords}/>
-                    <Route path="/charts" component={Charts}/>
-                    <Route path="/about" component={About}/>
+                    {this.state.main_component}
                 </div>
-            </Router>
             );
     }
 }

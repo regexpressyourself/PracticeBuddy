@@ -42,7 +42,7 @@ class Modes extends Component {
     }
 
     componentWillUnmount() {
-        document.removeeventlistener('keyup', this.handleKeypress);
+        document.removeEventListener('keyup', this.handleKeypress);
     }
     componentWillMount() {
         let header_array   = [];
