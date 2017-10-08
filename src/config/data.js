@@ -29,17 +29,17 @@ let data = {
         {
             name: "Dorian",
             notes: ["1", "2",  "3-", "4",  "5",  "6",  "7-"],
-            blurb: "Hip, jazzy"
+            blurb: "Jazzy, grim"
         },
         {
             name: "Phrygian",
             notes: ["1", "2-", "3-", "4",  "5",  "6-", "7-"],
-            blurb: "Exotic, Middle Eastern"
+            blurb: "Exotic, mysterious"
         },
         {
             name: "Lydian",
             notes: ["1", "2",  "3",  "4+", "5",  "6",  "7"],
-            blurb: "Ethereal and dreamy"
+            blurb: "Ethereal, dreamy"
         },
         {
             name: "Mixolydian",
@@ -54,7 +54,7 @@ let data = {
         {
             name: "Locrian",
             notes: ["1", "2-", "3-", "4",  "5-", "6-", "7-"],
-            blurb: "Dark and unstable"
+            blurb: "Dark, unstable"
         }
     ]
 }
