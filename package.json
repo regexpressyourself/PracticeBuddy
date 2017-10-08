@@ -2,6 +2,7 @@
   "name": "practice-buddy",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "feather-icons": "^3.2.2",
     "react": "^15.6.1",

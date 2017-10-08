@@ -41,7 +41,7 @@ class App extends Component {
     }
     render() {
         return (
-            <Router>
+            <Router basename="/practicebuddy">
                 <div id="main-container">
                     <Nabbar menu_items={this.state.nav_menu_items} />
                     <Route exact path="/" component={Home}/>
@@ -51,7 +51,7 @@ class App extends Component {
                     <Route path="/about" component={About}/>
                 </div>
             </Router>
-        );
+            );
     }
 }
 
