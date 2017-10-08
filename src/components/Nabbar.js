@@ -108,8 +108,8 @@ class Nabbar extends Component {
                     {/* Nav bar title */}
                     <h2 ref={this.setTitleRef} id="nav-title"
                         className={nav_toggle+"-title"} >
-                        <a href="/" >
-                            Nabbar Nav
+                        <a href="/practicebuddy" >
+                            Practice Buddy
                         </a>
                     </h2>
 
