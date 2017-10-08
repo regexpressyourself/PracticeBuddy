@@ -75,17 +75,27 @@ class Modes extends Component {
     handleKeypress(event) {
         let key = event.key;
 
-        let left_keys  = ['H', 'h', 'j', 'J', 
-            'ArrowLeft', 'ArrowDown', 'Backspace'];
+        let up_keys  = ['k', 'K', 'ArrowUp'];
 
-        let right_keys  = ['L', 'l', 'k', 'K', 
-            'ArrowRight', 'ArrowUp', 'Space'];
+        let down_keys  = ['j', 'J', 'ArrowDown'];
+
+        let left_keys  = ['H', 'h', 'ArrowLeft', 'Backspace'];
+
+        let right_keys  = ['L', 'l', 'ArrowRight', 'Space'];
 
         if (left_keys.indexOf(key) > -1) {
             this.decrementMode();
         }
         else if (right_keys.indexOf(key) > -1) {
             this.incrementMode();
+        }
+        else if (up_keys.indexOf(key) > -1) {
+            console.log("inc note");
+            this.incrementNote();
+        }
+        else if (down_keys.indexOf(key) > -1) {
+            console.log("dec note");
+            this.decrementNote();
         }
 
     }
@@ -99,6 +109,17 @@ class Modes extends Component {
     decrementMode() {
         this.setState({
             current_mode: (this.state.current_mode + 6) % 7
+        });
+    }
+    incrementNote() {
+        this.setState({
+            current_offset: (this.state.current_offset + 13) %12
+        });
+    }
+
+    decrementNote() {
+        this.setState({
+            current_offset: (this.state.current_offset + 11) % 12
         });
     }
 
