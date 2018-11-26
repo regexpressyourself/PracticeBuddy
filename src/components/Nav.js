@@ -9,8 +9,8 @@ class Nav extends Component {
             nav_element_class: "hidden-nav"
         };
         this.toggleNav = this.toggleNav.bind(this);
-        this.setWrapperRef = this.setWrapperRef.bind(this);           
-        this.setBurgerRef = this.setBurgerRef.bind(this);           
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.setBurgerRef = this.setBurgerRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
@@ -25,7 +25,7 @@ class Nav extends Component {
                 nav_element_class: "hidden-nav"
             });
         }
-    }    
+    }
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -65,9 +65,7 @@ class Nav extends Component {
                     <a href='/' ><h2 id="collapsed-nav-title">Practice Buddy</h2></a>
                     <ul id="nav-menu">
                         <a href="/modes"><li># Modes</li></a>
-                        <a href="/chords"><li># Chords</li></a>
-                        <a href="/charts"><li># Charts</li></a>
-                        <a href="about"><li># About</li></a>
+                        <a href="/about"><li># About</li></a>
                     </ul>
                 </div>
                 <div id={"nav-background-clicker-"+this.state.nav_element_class}>

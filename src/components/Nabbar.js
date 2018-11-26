@@ -28,6 +28,7 @@ class Nabbar extends Component {
         this.setState({
             menu_items: nextProps.menu_items
         });
+        if (nextProps.toggleNav !== undefined) {this.toggleNav();}
     }
 
     componentWillUnmount() {
@@ -131,7 +132,7 @@ class Nabbar extends Component {
                 <div id="nav-menu-container" 
                     className={nav_toggle}
                     ref={this.setSideNavRef}>
-                    <NabbarMenu menu_items={this.state.menu_items} />
+                    <NabbarMenu toggle_nav={() => this.toggleNav.bind(this)} menu_items={this.state.menu_items} />
                 </div>
 
                 {/* Background Clicker (see Nav.css for details) */}

@@ -208,6 +208,7 @@ class Modes extends Component {
                     intervals={this.state.interval_array[this.state.current_mode]}
                     offset={this.state.current_offset}
                     mode_to_chromatic={this.state.mode_to_chromatic}
+                    changeToNote={this.changeToNote}
                     chromatic={this.state.current_chromatic}
                 />
 

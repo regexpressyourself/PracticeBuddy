@@ -27,14 +27,18 @@ class NoteSection extends Component {
                 note = (note + offset) % 12;
                 note = chromatic[note];
                 if (note.includes("#")) {
-                    note= <span>{note.replace("#","")}
-                        <span className="flat-sharp">#</span>
+                    note = (
+                        <span>{note.replace("#","")}
+                            <span className="flat-sharp">#</span>
                         </span>
+                    );
                 }
                 else if (note.includes("b")) {
-                    note= <span>{note.replace("b","")}
-                        <span className="flat-sharp">b</span>
+                    note = (
+                        <span>{note.replace("b","")}
+                            <span className="flat-sharp">b</span>
                         </span>
+                    );
                 }
                 return (
                     <span key={i++} className={"note-cell note-cell"+i}>

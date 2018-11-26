@@ -8,7 +8,7 @@ class Home extends Component {
             <div id="homepage-image">
             </div>
                 <p>
-                    Practice Buddy is a quick and easy way to reference musical modes, chords, and charts. 
+                    Practice Buddy is a quick and easy way to reference musical modes.
                 </p>
             </div>
         );

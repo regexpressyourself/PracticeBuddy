@@ -6,8 +6,10 @@ class NabbarMenu extends Component {
         this.state = {
             menu_items: props.menu_items ? props.menu_items : [],
             // li_elements will store the actual <li> tags for our nav
-            li_elements: []
+            li_elements: [],
+            toggleNav: props.toggle_nav
         };
+      console.log(this.state.toggleNav);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -36,7 +38,7 @@ class NabbarMenu extends Component {
                 return (
                     <li key={menu_item.title} className="nav-menu-item">
                         <span  className="nav-menu-link" 
-                            onClick={menu_item.onClick}>
+                          onClick={menu_item.onClick}>
                             <span>
                             {menu_item.title}
                         </span>

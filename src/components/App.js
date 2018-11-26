@@ -18,18 +18,11 @@ class App extends Component {
         super(props);
         this.state = {
             main_component: <Home />,
+            toggleNav: false,
             nav_menu_items:  [
                 {
                     onClick: () => this.replaceBody("modes"),
                     title: "# Modes"
-                },
-                {
-                    onClick: () => this.replaceBody("chords"),
-                    title: "# Chords"
-                },
-                {
-                    onClick: () => this.replaceBody("charts"),
-                    title: "# Charts"
                 },
                 {
                     onClick: () => this.replaceBody("about"),
@@ -54,13 +47,15 @@ class App extends Component {
             main_component = <Chords />;
         }
         this.setState({
-            main_component: main_component
+            main_component: main_component,
+            toggleNav:  !this.state.toggleNav
         });
+      console.log(this.state);
     }
     render() {
         return (
                 <div id="main-container">
-                    <Nabbar menu_items={this.state.nav_menu_items} />
+                    <Nabbar toggleNav={this.state.toggleNav} menu_items={this.state.nav_menu_items} />
                     {this.state.main_component}
                 </div>
             );

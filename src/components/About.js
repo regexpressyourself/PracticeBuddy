@@ -8,21 +8,16 @@ class About extends Component {
         return (
             <div id="about-page">
                 <div id="about-header">
-                <h2>Practice Buddy: About</h2>
                 <img src={logo} />
-
                 </div>
 
                 <p>
-                    A web app to help practice modes, learn chords, 
-                    and chart tunes for guitar and bass players.
+                  A web app to help practice modes
+                 for guitar and bass players.
                 </p>
 
-                <p><em>
-                        Currently in development.
-                </em></p>
-
                 <p><b>Built With:</b>
+                </p>
                     <ul>
                         <li>
                             <b><a href="https://reactjs.org/">
@@ -55,7 +50,6 @@ class About extends Component {
                             Boilerplate React configuration from Facebook
                         </li>
                     </ul>
-                </p>
                 <button onClick={() => window.location.href=link} 
                     className="github-link-btn btn">
                     See more on GitHub
