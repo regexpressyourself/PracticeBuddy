@@ -21,7 +21,7 @@ Practice Buddy is currently in development. The final product will consist of th
 
 ### Components
 
-#### Modes (in active development)
+#### Modes
 
 Practice Buddy will allow show all seven modes and their corresponding scales. The modes are listed as intervals and actual pitches, and can be adjusted to any starting pitch.
 
