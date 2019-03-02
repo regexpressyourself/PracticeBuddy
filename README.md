@@ -1,14 +1,9 @@
-<img alt="Practice Buddy" align="right" src="https://regexpressyourself.github.io/public/practicebuddy_logo.png" width="400px" />
+<img alt="Practice Buddy" align="right" src="https://smessina.com/static/images/practicebuddy.png" width="400px" />
 
 # Practice Buddy
 
 A web app to help practice modes, learn chords, and chart tunes for guitar and bass players.
 
-[See it live and track progress!](https://smessina.com/practicebuddy)
-
-**_Currently in development._**
-* **_See [contributing](#contributing) to learn how to help_**
-* **_See [the projects section](https://github.com/regexpressyourself/PracticeBuddy/projects) to track progress_**
 
 ## Table of Contents
 
