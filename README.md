@@ -1,4 +1,4 @@
-<img alt="Practice Buddy" align="right" src="https://smessina.com/static/images/practicebuddy.png" width="400px" />
+<img alt="Practice Buddy" align="right" src="https://smessina.com/static/images/sss/pb-1.png" width="400px" />
 
 # Practice Buddy
 
